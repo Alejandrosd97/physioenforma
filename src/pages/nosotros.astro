@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro"
+import {fisiosInfo} from'../../public/fisios.js'
+
+import FisioDetalle from '../components/FisioDetalle.astro';
+
+---
+
+
+<Layout title="Nosotros">
+    <section class="h-screen w-full bg-white">
+        <div class="w-5/6 m-auto mt-16">
+            <h1 class="text-slate-900 text-4xl mb-12">NOSOTROS</h1>
+            <div class="flex gap-6">
+                {
+                    fisiosInfo.map((f)=>{
+                        return  <FisioDetalle servicio={f}/>
+                    })
+                }
+            </div>
+        </div>
+    </section>
+
+</Layout>

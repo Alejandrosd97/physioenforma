@@ -1,0 +1,51 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "../../layouts/Layout.astro"
+import {tratamientosInfo} from '../../../public/tratamientos.js'
+
+const {id} = Astro.params
+
+
+var tratamiento = tratamientosInfo.find((t)=>{
+    return t.id == id
+})
+
+if (!tratamiento){
+    tratamiento = {
+        id: 1,
+        titulo : 'Fisioterapia deportiva',
+        descripcion: '',
+        img : ''
+    }
+}
+
+
+export const getStaticPaths = (() => {
+    
+    return [
+        {params : { id : 1}},
+        {params : { id : 2}},
+        {params : { id : 3}},
+        {params : { id : 4}},
+        {params : { id : 5}},
+        {params : { id : 6}}
+    ];
+}) satisfies GetStaticPaths;
+---
+
+
+<Layout title={tratamiento.titulo}>
+
+    <section class="pt-12 bg-white h-screen">
+        <div class=" flex flex-col-reverse md:grid md:grid-cols-4 w-5/6 mx-auto gap-12">
+        <div class="col-span-2 ">
+            <h2 class="text-4xl mb-3 text-blue-400">{tratamiento.titulo}</h2>
+            <p>{tratamiento.descripcion}</p>
+            <a class="bg-slate-900 py-4 text-white px-8 rounded-xl mt-4 inline-block" href="">PEDIR CITA</a>
+        </div>
+        <div class="h-[550px] col-span-2">
+            <img class="h-full w-full object-cover rounded-2xl" src={tratamiento.img} alt="">
+        </div>
+    </div>
+    </section>
+</Layout>

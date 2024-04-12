@@ -1,0 +1,31 @@
+<section style={{backgroundColor: '#0c0c1d', borderTopLeftRadius : '16px', borderTopRightRadius : '16px'}} class="py-20 border-b-2 border-white" id="contacto">
+    <div class="w-5/6 mx-auto">
+    <h2 class=" text-white text-4xl mb-12 ">CONTACTO</h2>
+    <p class="text-white mb-10">Déjanos tu mensaje y nos pondremos en contacto contigo lo antes posible</p>
+    <div>
+    <form  action="">
+        <div class="grid grid-cols-4 sm:gap-12">
+        <div class="col-span-4 sm:col-span-2">
+        <div class="flex flex-col mb-5 gap-1">
+            <label class="text-blue-300" for="nombre">Nombre</label>
+            <input name="name" class="outline-none border-solid border-2 text-white border-white bg-transparent px-1 py-1.5 rounded-md" name="nombre" type="text">
+        </div>
+
+        <div class="flex flex-col gap-1">
+            <label class="text-blue-300" for="email">Email</label>
+            <input name="email" class="outline-none border-solid border-2 text-white border-white bg-transparent px-1 py-1.5 rounded-md" name="email" type="text">
+        </div>
+    </div>
+
+        <div class="col-span-4 sm:col-span-2 flex h-[200px] sm:h-full flex-col my-5 sm:mt-0 gap-1">
+            <label class="text-blue-300" for="mensaje">Mensaje</label>
+            <textarea name="mensaje" class="outline-none h-full text-white border-solid border-2 border-white bg-transparent px-1 py-1.5 rounded-md" name="mensaje"></textarea>
+        </div>
+    </div>
+    <input class="mt-5" type="checkbox" required id="privacidad">
+    <label class="mt-5 text-white" for="privacidad">He leido y acepto la <a class="text-white" href="#">política de privacidad</a></label>
+    <button class="rounded-xl block bg-blue-400 duration-500 px-8 mt-5 py-4 text-slate-900 font-bold hover:-translate-y-[4px]">ENVIAR</button>
+    </form>
+</div>
+</div>
+</section>

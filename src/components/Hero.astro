@@ -1,0 +1,41 @@
+
+
+
+
+<style>
+    @keyframes anim {
+        from {opacity: 0;}
+        to {opacity: 100;}
+    }
+
+
+    .h1-animation{
+        animation-name: anim;
+        animation-duration: 5s;
+    }
+
+
+    .img-animation{
+        animation-name: anim;
+        animation-duration: 3s;
+    }
+
+</style>
+
+
+<section style="height: 85vh" class="w-full flex items-center relative">
+    <div class="flex h-full flex-col items-center md:flex-row ">
+        <div class="img-animation h-full">
+            <img id="logo" class="text-white h-full rounded-2xl" src="../logo.png" alt="">
+        </div>
+        <div class="h1-animation text-center">
+            <h1 class="md:text-6xl text-lg mb-6 text-blue-400 font-bold">PHYSIOENFORMA</h1>
+            <h2 class="md:text-2xl text-md mb-6 text-slate-900">Tu salud en manos de los mejores profesionales</h2>
+            <button class="rounded-xl text-white py-4 px-8 bg-slate-900 font-bold duration-500 hover:-translate-y-[4px]">PEDIR CITA</button>
+        </div>
+        <div class="img-animation h-full">
+            <img style={{transform: "scaleX(-1)"}} id="logo" class="text-white h-full rounded-2xl" src="../logo.png" alt="">
+        </div>
+    </div>
+    
+</section>

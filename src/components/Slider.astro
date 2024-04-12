@@ -1,0 +1,145 @@
+<style>
+    .contenedor{
+        width: 100%;
+        margin:auto;
+        height: 600px;
+        overflow:hidden;
+        display:flex;
+        justify-content: center;
+        position:relative
+    }
+
+    .slider{
+        width: 100%;
+        height: 400px;
+        position:relative
+    }
+
+    .buttons{
+        position:absolute;
+        left:50%;
+        transform:translateX(-50%);
+        bottom:220px;
+        display: flex;
+        gap:20px;
+        z-index:20
+    }
+
+    .btn{
+        color:black;
+        font-size:40px;
+        height: 40px;
+        width:40px;
+        border-radius:2px;
+        background-color:rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding:0;
+        transition:0.2s
+    }
+
+    .btn:hover{
+        background-color:rgba(0, 0, 0, 0.4);
+
+
+    }
+
+
+        .slides{
+            position:absolute;
+            border-radius:16px;
+            background:var(--img);
+            background-size:cover;
+            background-position:center;
+            transition:0.5s;
+            width: calc(25% - 2px);
+            height: 140px;
+            bottom: -160px;
+            top: initial;
+            z-index:10
+        }
+
+        .slides:nth-child(1),
+    .slides:nth-child(2){
+        left:0;
+        width: 100%;
+        height: 100%;
+        transform: translateY(0);
+        top:initial;
+        bottom:0;
+        
+    }
+
+    .slides:nth-child(3){
+        left:0;
+    }
+    .slides:nth-child(4){
+        left:calc(25%);
+    }
+    .slides:nth-child(5){
+        left:calc(50%);
+    }
+    .slides:nth-child(6){
+        left:calc(75%);
+    }
+    
+
+</style>
+
+<section class="bg-white py-[60px]">
+    <h4 class="w-5/6 m-auto text-4xl text-slate-900">DESCUBRE NUESTRA CLÍNICA</h4>
+    <div class="grid grid-cols-10 gap-x-8 w-5/6 m-auto pt-[50px]">
+    <div class="contenedor col-span-10 md:col-span-6">
+        <div id="slider" class="slider">
+            <div class="slides" style="--img : url(../../clinica-david-1.jpg)">
+            </div>
+            <div class="slides" style="--img : url(../../clinica-david-2.jpg)">
+            </div>
+            <div class="slides" style="--img : url(../../clinica-david-3.jpg)">
+            </div>
+            <div class="slides" style="--img : url(../../clinica-david-4.jpg)">
+            </div>
+            <div class="slides" style="--img : url(../../clinica-david-5.jpg)">
+            </div>
+            <div class="slides" style="--img : url(../../clinica-david-6.jpg)">
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="before-btn" class="btn"><img src="../left.svg" alt=""></button>
+            <button id="after-btn" class="btn"><img src="../right.svg" alt=""></button>
+        </div>
+    </div>
+    <div class="col-span-10 md:col-span-4">
+        <p class="text-slate-900">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nulla quod veritatis beatae cupiditate a quia ut, magnam, quae cum laboriosam placeat. Fugiat voluptatibus officiis obcaecati repellat natus facere ut?</p>
+        <p class="text-slate-900">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis recusandae, cupiditate ratione sit deserunt totam quis aperiam assumenda rem vero cum ad consequuntur praesentium at! Eaque inventore error earum omnis.</p>
+        <h3 class="mt-6 text-blue-400 font-bold">HORARIO:</h3>
+        <span class="mt-1 inline-block text-slate-900">Lunes a Viernes: 10:00h a 14:00h y 16:00h a 20:00h</span>
+        <h3 class="mt-6 text-blue-400 font-bold">TELÉFONO:</h3>
+        <span class="mt-1 inline-block text-slate-900">
+            644 51 41 10
+        </span>
+        <h3 class="mt-6 text-blue-400 font-bold">DIRECCIÓN:</h3>
+        <span class="mt-1 inline-block text-slate-900">
+            Carrer Rei en Jaume 8, Bellreguard
+        </span>
+    </div>
+</div>
+</section>
+
+<script>
+    let previousBtn = document.getElementById('before-btn')
+    let nextBtn = document.getElementById('after-btn')
+    let slider = document.getElementById('slider')
+
+    nextBtn.addEventListener('click', function(){
+        let slides = document.querySelectorAll('.slides')
+        slider.append(slides[0])
+    })
+
+    previousBtn.addEventListener('click', function(){
+        let slides = document.querySelectorAll('.slides')
+        console.log('hola')
+        slider.prepend(slides[slides.length - 1])
+    })
+</script>

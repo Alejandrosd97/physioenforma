@@ -1,23 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Cuadros from '../components/Cuadros.astro';
+import Cuadros from '../components/Ofertas.astro';
 import ContactForm from '../components/ContactForm.astro';
 import Servicios from '../components/Servicios.astro';
-import Conocenos from '../components/Conocenos.astro';
+import Conocenos from '../components/papelera/Conocenos.astro';
 import Hero from '../components/Hero.astro';
 import Slider from '../components/Slider.astro';
 import Mapa from '../components/Mapa.astro';
 import Nutricion from '../components/Nutricion';
 import Exitos from '../components/Exitos.astro';
-import Test from '../components/Test.astro';
+import Test from '../components/David.astro';
+import Entrenamiento from "../components/Entrenamiento.astro"
+
 
 ---
 
 <Layout title="Phisioenforma">
 	<Hero/>
 	<!-- <Conocenos/> -->
-	<Test/>
-	<Nutricion client:load/>
+	<!-- <Test/> -->
+	<Servicios/>
+	<Entrenamiento/>
+
+	<!-- <Nutricion client:load/> -->
 	<Slider/>
 	<Exitos/>
 	<Cuadros/>

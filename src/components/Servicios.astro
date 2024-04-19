@@ -1,21 +1,20 @@
 ---
-import Servicio from "./Servicio.astro"
 import {tratamientosInfo} from'../../public/tratamientos.js'
+import Entrenamiento from './Entrenamiento.astro'
+import Tratamiento from "./Tratamiento.astro"
 ---
 
 
-<section class="bg-white">
+<section id="servicios" class="bg-white">
     <div class="w-5/6 mx-auto py-20">
-    <h2 class="text-4xl text-slate-800">NUESTROS SERVICIOS</h2>
-    <p class="text-slate-900 mt-4">En FisioEnForma, nos dedicamos a brindarte una atención integral para recuperar y mejorar tu bienestar físico. Nuestros servicios de fisioterapia están diseñados para abordar una amplia gama de necesidades, desde lesiones deportivas hasta rehabilitación postoperatoria. Con la ayuda de nuestro equipo de fisioterapeutas altamente calificados, te proporcionaremos tratamientos personalizados y enfocados en tus objetivos de salud. Descubre cómo podemos ayudarte a sentirte en tu mejor forma física</p>
+    <h2 class="text-4xl text-slate-800">FISIOTERAPIA</h2>
+    <p class="text-slate-900 text-lg mt-4">En FisioEnForma, nos dedicamos a brindarte una atención integral para recuperar y mejorar tu bienestar físico. Con la ayuda de nuestro equipo de fisioterapeutas altamente calificados, te proporcionaremos tratamientos personalizadoS. Descubre cómo podemos ayudarte a sentirte en tu mejor forma física</p>
     <div class="grid grid-cols-12 w-full mx-auto gap-x-5 gap-y-12 py-10">
         {
             tratamientosInfo.map((t)=>{
-                return  <Servicio servicio={t}/>
+                return  <Tratamiento servicio={t}/>
             })
         }
-        
-
     </div>
 </div>
     

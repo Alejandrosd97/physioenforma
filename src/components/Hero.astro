@@ -3,6 +3,7 @@
 
 
 <style>
+    
     @keyframes anim {
         from {opacity: 0;}
         to {opacity: 100;}
@@ -20,21 +21,27 @@
         animation-duration: 3s;
     }
 
+    .titulo{
+        text-shadow: -15px 5px 20px #0c0c1d;
+        text-shadow: 0 12px 8px #c4b59d,0 -2px 1px #fff;
+
+    }
+
 </style>
 
 
 <section style="height: 85vh" class="w-full flex items-center relative">
-    <div class="flex h-full flex-col items-center md:flex-row ">
+    <div class="flex h-full items-center w-full flex-row justify-end md:justify-center">
         <div class="img-animation h-full">
-            <img id="logo" class="text-white h-full rounded-2xl" src="../logo.png" alt="">
+            <img class="hidden md:block text-white h-full rounded-2xl" src="../logo.png" alt="">
         </div>
-        <div class="h1-animation text-center">
-            <h1 class="md:text-6xl text-lg mb-6 text-blue-400 font-bold">PHYSIOENFORMA</h1>
+        <div class="h1-animation absolute z-10 left-6 top-10 md:top-0 md:left-0 md:relative md:p-0 text-left md:text-center">
+            <h1 class="titulo text-4xl mb-6 text-blue-400 font-bold">PHYSIOENFORMA</h1>
             <h2 class="md:text-2xl text-md mb-6 text-slate-900">Tu salud en manos de los mejores profesionales</h2>
             <button class="rounded-xl text-white py-4 px-8 bg-slate-900 font-bold duration-500 hover:-translate-y-[4px]">PEDIR CITA</button>
         </div>
         <div class="img-animation h-full">
-            <img style={{transform: "scaleX(-1)"}} id="logo" class="text-white h-full rounded-2xl" src="../logo.png" alt="">
+            <img style={{transform: "scaleX(-1)"}} class="text-white opacity-30 md:opacity-100 h-full rounded-2xl" src="../logo.png" alt="">
         </div>
     </div>
     

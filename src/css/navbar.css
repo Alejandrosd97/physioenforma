@@ -1,0 +1,40 @@
+@keyframes navAnimation {
+    from {
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        padding: 24px 64px;
+        font-size: 24px
+    }
+
+    to {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        padding: 12px 64px;
+        font-size: 16px
+    }
+}
+
+
+@keyframes textAnimation {
+    from {
+        font-size: 20px
+    }
+
+    to {
+        font-size: 16px
+    }
+}
+
+.anim{
+    animation: navAnimation linear both;
+}
+
+.textAnim {
+    animation: textAnimation linear both
+}
+
+
+.anim, .textAnim{
+    animation-timeline: scroll(root);
+    animation-range: 0 100px;
+}

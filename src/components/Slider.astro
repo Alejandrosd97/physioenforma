@@ -41,26 +41,46 @@
 
     .btn:hover{
         background-color:rgba(0, 0, 0, 0.4);
+    }
 
+    .slides{
+        position:absolute;
+        border-radius:16px;
+        /* background:linear-gradient(to bottom, transparent 0%, black 100%), var(--img) ; */
+        background:var(--img) ;
+        background-size:cover;
+        background-position:center;
+        transition:0.5s;
+        width: calc(25% - 2px);
+        height: 140px;
+        bottom: -160px;
+        top: initial;
+        z-index:10
+    }
 
+    @media screen and (max-width:768px){
+        .slider{
+            height: 300px;
+        }
+        .slides{
+            height: 100px;
+            bottom: -110px
+        }
+        .buttons{
+            bottom : 310px;
+        }   
+    }
+
+    @media screen and (max-width:480px){
+        .slides{
+            height: 60px;
+            bottom: -70px
+
+        }
     }
 
 
-        .slides{
-            position:absolute;
-            border-radius:16px;
-            background:var(--img);
-            background-size:cover;
-            background-position:center;
-            transition:0.5s;
-            width: calc(25% - 2px);
-            height: 140px;
-            bottom: -160px;
-            top: initial;
-            z-index:10
-        }
-
-        .slides:nth-child(1),
+    .slides:nth-child(1),
     .slides:nth-child(2){
         left:0;
         width: 100%;

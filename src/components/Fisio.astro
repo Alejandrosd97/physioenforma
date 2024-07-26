@@ -1,21 +1,16 @@
+---
 
-<div class="col-span-2">
-    <div class="w-full h-full">
-        <img class="w-full h-full object-cover" src="../../servicio.jpg" alt=""/>
+const {info} = Astro.props
+---
+
+
+<div class="col-span-4">
+    <div class="w-full h-[350px]">
+        <img class="w-full h-full object-cover rounded-2xl" src="../../david.jpg" alt=""/>
     </div>
 </div>
-<div class="col-span-4">
-    <div>
-        <h4 class="text-slate-900">servicio 1</h4>
-    </div>
-    <div>
-        <h4 class="text-slate-900">servicio 2</h4>
-    </div>
-    <div>
-        <h4 class="text-slate-900">servicio 3</h4>
-    </div>
-    <div>
-        <h4 class="text-slate-900">servicio 4</h4>
-    </div>
+<div class="col-span-8 flex flex-col justify-center">
+    {info.numero && <span class="text-blue-300 text-sm">Nº Colegiado: {info.numero}</span>}
+    <h3 class="text-3xl mb-6" style={{color: '#0c0c1d'}}>{info.nombre}</h3>
+    <p>{info.informacion}</p>
 </div>    
-</section>

@@ -5,17 +5,55 @@ import Tratamiento from "./Tratamiento.astro"
 ---
 
 
+
+<style>
+
+@keyframes fadeIn {
+        to {
+            opacity : 1;
+        }
+    }
+
+    .animationVisible {
+        animation : 1s linear fadeIn;
+        animation-fill-mode: forwards;
+    }
+
+</style>
+
 <section id="servicios" class="bg-white">
-    <div class="w-5/6 mx-auto py-20">
+    <div class="w-5/6 mx-auto py-20 text-center">
     <h2 class="text-4xl text-slate-800">FISIOTERAPIA</h2>
-    <p class="text-slate-900 text-lg mt-4">En FisioEnForma, nos dedicamos a brindarte una atención integral para recuperar y mejorar tu bienestar físico. Con la ayuda de nuestro equipo de fisioterapeutas altamente calificados, te proporcionaremos tratamientos personalizadoS. Descubre cómo podemos ayudarte a sentirte en tu mejor forma física</p>
-    <div class="grid grid-cols-12 w-full mx-auto gap-x-5 gap-y-12 py-10">
+    <p class="text-slate-900 text-lg mt-4 md:w-4/6 m-auto w-5/6">En Physioenforma, nos dedicamos a brindarte una atención integral para recuperar y mejorar tu bienestar físico. Con la ayuda de nuestro equipo de fisioterapeutas altamente calificados, te proporcionaremos tratamientos personalizados. Descubre cómo podemos ayudarte a sentirte en tu mejor forma física</p>
+    <div id="observableElementServicios" class="grid grid-cols-12 w-full mx-auto gap-x-5 gap-y-12 py-10">
         {
-            tratamientosInfo.map((t)=>{
+            tratamientosInfo.map((t, index)=>{
                 return  <Tratamiento servicio={t}/>
             })
         }
     </div>
 </div>
     
+<script>
+    const observableElement = document.getElementById('observableElementServicios')
+    const servicios = document.getElementsByClassName('elementoServicio')
+   
+    let options = {
+    root: document.querySelector("#scrollArea"),
+    rootMargin: "0px",
+    threshold: 0.2,
+};
+
+let observer = new IntersectionObserver((entries)=>{
+    const entry =  entries[0]
+    if (entry.isIntersecting){
+        for (let servicio of servicios) {
+            servicio.classList.add('animationVisible')
+            }
+        }
+    }, options);
+
+observer.observe(observableElement)
+
+</script>
 </section>

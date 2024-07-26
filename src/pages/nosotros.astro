@@ -2,23 +2,72 @@
 import Layout from "../layouts/Layout.astro"
 import {fisiosInfo} from'../../public/fisios.js'
 
-import FisioDetalle from '../components/FisioDetalle.astro';
+import Fisio from '../components/Fisio.astro';
 
 ---
 
 
+
 <Layout title="Nosotros">
-    <section class="h-screen w-full bg-white">
+    <section class="w-full bg-white">
         <div class="w-5/6 m-auto mt-16">
-            <h1 class="text-slate-900 text-4xl mb-12">NOSOTROS</h1>
-            <div class="flex gap-6">
-                {
-                    fisiosInfo.map((f)=>{
-                        return  <FisioDetalle servicio={f}/>
-                    })
-                }
+            <h1 class="text-slate-900 text-4xl mb-12">NUESTRO EQUIPO</h1>
+            <div>
+                <!-- primer fisio -->
+                <div class="fisio grid grid-cols-12 gap-16 mb-20 h-[80%]">
+                    <div class="col-span-5">
+                        <div class="w-full h-[450px]">
+                            <img class="w-full h-full object-cover rounded-2xl" src="../../david.jpg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="col-span-7 flex flex-col justify-center">
+                        <span class="text-blue-300 text-sm">Nº Colegiado: 1234</span>
+                        <h3 class="text-3xl mb-6" style={{color: '#0c0c1d'}}>David Boscà</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ratione porro nemo sed tempora aperiam deleniti fugiat aliquid sapiente aspernatur, voluptate quisquam ad laboriosam voluptas delectus, illum dolorem? Fugit, magnam.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ratione porro nemo sed tempora aperiam deleniti fugiat aliquid sapiente aspernatur, voluptate quisquam ad laboriosam voluptas delectus, illum dolorem? Fugit, magnam.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ratione porro nemo sed tempora aperiam deleniti fugiat aliquid sapiente aspernatur, voluptate quisquam ad laboriosam voluptas delectus, illum dolorem? Fugit, magnam.</p>
+                    </div>   
+                </div>
+
+                <!-- segundo fisio -->
+                <div class="fisio grid grid-cols-12 gap-16 mb-20 h-[80%]">
+                    <div class="col-span-7 flex flex-col justify-center">
+                        <span class="text-blue-300 text-sm">Nº Colegiado: 8311</span>
+                        <h3 class="text-3xl mb-6" style={{color: '#0c0c1d'}}>Alejandro Santamaría</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ratione porro nemo sed tempora aperiam deleniti fugiat aliquid sapiente aspernatur, voluptate quisquam ad laboriosam voluptas delectus, illum dolorem? Fugit, magnam.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ratione porro nemo sed tempora aperiam deleniti fugiat aliquid sapiente aspernatur, voluptate quisquam ad laboriosam voluptas delectus, illum dolorem? Fugit, magnam.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ratione porro nemo sed tempora aperiam deleniti fugiat aliquid sapiente aspernatur, voluptate quisquam ad laboriosam voluptas delectus, illum dolorem? Fugit, magnam.</p>
+                    </div> 
+                    <div class="col-span-5">
+                        <div class="w-full h-[450px]">
+                            <img class="w-full h-full object-cover rounded-2xl" src="../../david.jpg" alt=""/>
+                        </div>
+                    </div>  
+                </div>
+
+                <!-- tercer fisio -->
+                <div class="fisio grid grid-cols-12 gap-16 mb-20 h-[80%]">
+                    <div class="col-span-5">
+                        <div class="w-full h-[450px]">
+                            <img class="w-full h-full object-cover rounded-2xl" src="../../david.jpg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="col-span-7 flex flex-col justify-center">
+                        <h3 class="text-3xl mb-6" style={{color: '#0c0c1d'}}>Rosa Boscà</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ratione porro nemo sed tempora aperiam deleniti fugiat aliquid sapiente aspernatur, voluptate quisquam ad laboriosam voluptas delectus, illum dolorem? Fugit, magnam.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ratione porro nemo sed tempora aperiam deleniti fugiat aliquid sapiente aspernatur, voluptate quisquam ad laboriosam voluptas delectus, illum dolorem? Fugit, magnam.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ratione porro nemo sed tempora aperiam deleniti fugiat aliquid sapiente aspernatur, voluptate quisquam ad laboriosam voluptas delectus, illum dolorem? Fugit, magnam.</p>
+                    </div>   
+                </div>
             </div>
         </div>
     </section>
 
 </Layout>
+
+
+<!-- {
+    fisiosInfo.map((f)=>{
+        return  <div class="fisio grid grid-cols-12 gap-16 mb-20"><Fisio info={f}/></div>
+    })
+}  -->

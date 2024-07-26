@@ -2,14 +2,16 @@
     from {
         border-top-left-radius: 16px;
         border-top-right-radius: 16px;
-        padding: 24px 64px;
+        padding-top: 24px;
+        padding-bottom:24px;
         font-size: 24px
     }
 
     to {
         border-top-left-radius: 0px;
         border-top-right-radius: 0px;
-        padding: 12px 64px;
+        padding-top: 12px;
+        padding-bottom: 12px;
         font-size: 16px
     }
 }

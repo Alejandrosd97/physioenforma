@@ -3,10 +3,31 @@ const { servicio : {nombre, colegiado, descripcion, id} } = Astro.props;
 
 ---
 
-<article class="mb-[100px]">
-    <div class="h-[350px] ">
-        <img class="w-full h-full bg-cover rounded-2xl" src="../pesas.jpg" alt="">
+
+
+<style>
+
+@keyframes arriba {
+    from {
+        position: relative;
+    }
+    to {
+        position: translateY(-1);
+    }
+}
+
+.anim:hover{
+    animation: arriba 0.5s ease;
+}
+
+
+
+</style>
+
+<article class="mb-[100px] h-[300px] bg-blue-300 p-8 flex flex-col items-center rounded-2xl col-span-4 relative">
+    <div class="anim w-[150px] h-[150px] absolute top-8">
+        <img class="w-full h-full object-cover rounded-full" src="../david.jpg" alt="">
     </div>
     <h3 class="text-blue-500 text-2xl mt-4 mb-2">Nombre del fsio</h3>
-    <p class="text-slate-900">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est vel voluptatum vero quia cumque dolores molestias possimus consequatur repellendus tempore ut, impedit dignissimos maiores quasi illo commodi tempora quisquam aut.</p>
+    <p class="text-slate-900 hidden">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est vel voluptatum vero quia cumque dolores molestias possimus consequatur repellendus tempore ut, impedit dignissimos maiores quasi illo commodi tempora quisquam aut.</p>
 </article>

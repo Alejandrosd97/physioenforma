@@ -1,26 +1,74 @@
-<section style={{backgroundColor: '#0c0c1d'}} class="py-[60px] rounded-2xl">
+<style>
+
+    @keyframes fadeIn {
+        to {
+            opacity : 1;
+        }
+    }
+
+    .animationVisible {
+        animation : 1s linear fadeIn;
+        animation-fill-mode: forwards;
+    }
+    .animationVisible2 {
+        animation-delay: 0.2s;
+    }
+    .animationVisible3 {
+        animation-delay: 0.4s;
+    }
+
+</style>
+
+
+
+
+<section id="observableElement" style={{backgroundColor: '#0c0c1d'}} class="py-[60px] rounded-2xl">
     <div class="w-5/6 mx-auto">
     <h2 class="text-4xl mb-8 text-white">TARIFAS</h3>
     <div class="flex items-center flex-col gap-16 relative sm:flex-row">    
         <div>
-            <div class="flex flex-col items-center">
+            <div id="primerElemento" class="flex flex-col opacity-0 items-center">
                 <img class="w-1/4" src="../physio.svg" alt="no se ve">
                 <h3 class="text-blue-300 text-2xl mt-4"> Sesión Fisioterapia</h3>
                 <span class="text-white text-xl" >35€</span>            
             </div>
         </div>
         <div class="w-full h-[4px] sm:w-[4px] sm:h-[200px] self-center bg-blue-300"></div>
-        <div class="flex flex-col items-center">
+        <div id="segundoElemento" class="flex flex-col opacity-0 items-center">
             <img class="w-1/4" src="../regalo.svg" alt="no se ve">
             <h3 class="text-blue-300 text-2xl mt-4">Bono 4 sesiones</h3>
             <span class="text-white text-xl" >100€</span>
         </div>
-        <div class="w-full h-[4px] sm:w-[4px] sm:h-[200px] self-center bg-blue-300"></div>
-        <div class="flex flex-col items-center">
+        <div class="w-full h-[4px] sm:w-[4px] sm:h-[200px]  self-center bg-blue-300"></div>
+        <div id="tercerElemento" class="flex flex-col opacity-0 items-center">
             <img class="w-1/4" src="../basket.svg" alt="">
             <h3 class="text-blue-300 text-2xl mt-4">Miembros Gandia Basket</h3>
             <span class="text-white text-xl" >30€</span>
         </div>
     </div>
 </div>
+
+<script>
+    const observableElement = document.getElementById('observableElement')
+    const first = document.getElementById('primerElemento')
+    const second = document.getElementById('segundoElemento')
+    const third = document.getElementById('tercerElemento')
+    let options = {
+    root: document.querySelector("#scrollArea"),
+    rootMargin: "0px",
+    threshold: 0.2,
+};
+
+let observer = new IntersectionObserver((entries)=>{
+    const entry =  entries[0]
+    if (entry.isIntersecting){
+        first.classList.add('animationVisible')
+        second.classList.add('animationVisible', 'animationVisible2')
+        third.classList.add('animationVisible', 'animationVisible3')
+    }
+}, options);
+
+observer.observe(observableElement)
+
+</script>
 </section>

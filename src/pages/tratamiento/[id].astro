@@ -14,6 +14,7 @@ if (!tratamiento){
     tratamiento = {
         id: 1,
         titulo : 'Fisioterapia deportiva',
+        descripcionCorta : '',
         descripcion: '',
         img : ''
     }
@@ -41,7 +42,9 @@ export const getStaticPaths = (() => {
         <div class="col-span-2 ">
             <h2 class="text-4xl mb-3 text-blue-400">{tratamiento.titulo}</h2>
             <p>{tratamiento.descripcion}</p>
-            <a class="bg-slate-900 py-4 text-white px-8 rounded-xl mt-4 inline-block" href="">PEDIR CITA</a>
+            <a class="bg-slate-900 py-4 text-white px-8 rounded-xl mt-4 inline-block" target='_blank' href={`https://wa.me/34644514110?text=¡Hola!%20Me%20gustaría%20pedir%20cita%20para%20una%20sesión%20de%20${tratamiento.titulo}`}>
+                PEDIR CITA
+            </a>
         </div>
         <div class="h-[550px] col-span-2">
             <img class="h-full w-full object-cover rounded-2xl" src={tratamiento.img} alt="">

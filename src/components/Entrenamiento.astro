@@ -1,31 +1,71 @@
-<!-- <style>
-   .foto {
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;    } 
+<style>
 
-</style> -->
+    @keyframes fadeIn {
+        to {
+            opacity : 1;
+        }
+    }
 
-<!-- style={{backgroundColor : '#0c0c1d'}} -->
+    .animationVisible {
+        animation : 1s linear fadeIn;
+        animation-fill-mode: forwards;
+    }
+    .animationVisible2 {
+        animation-delay: 0.2s;
+    }
+    .animationVisible3 {
+        animation-delay: 0.4s;
+    }
 
-<section  class="py-20 bg-blue-200 rounded-2xl">
-    <div class="w-5/6 m-auto">
-    <h3 class="text-4xl mb-20 text-white">OTROS SERVICIOS</h3>
-    <div class="">
-        <div class="rounded-2xl flex gap-12">
-            <img class="rounded-2xl h-[300px] w-full object-cover foto" src="/david.jpg" alt="">
-            <div>
-                <h4 class="text-2xl mt-6 mb-4 text-slate-900">ENTRENAMIENTO</h4>
-                <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis harum id facilis aliquam, repudiandae blanditiis facere omnis voluptas nostrum numquam minus eos temporibus distinctio culpa? Sint, non ratione. Ipsa, blanditiis.</p>
-                <a class="bg-slate-900 text-white mt-4 py-4 px-8 rounded-xl inline-block duration-500 px-8 mt-5 py-4 font-bold hover:-translate-y-[4px]" href=``>MÁS INFORMACIÓN</a>
-            </div>
+</style>
+
+
+<section id="otros-servicios" class="grid grid-cols-12 rounded-2xl">
+    <div class="col-span-0 md:col-span-5 h-full">
+        <img id="img-logo" class="hidden md:block opacity-0 text-white h-full rounded-2xl" src="../logo-oscuro.jpg" alt="">
+    </div>
+    <div class="col-span-12 md:col-span-7 bg-blue-100 flex flex-col justify-center gap-12 rounded-2xl px-16 py-16 md:py-0">
+        <div id="entrenamiento" class="opacity-0">
+            <h3 class="text-2xl mb-6">ENTRENAMIENTO PERSONAL</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis asperiores eveniet qui eaque eos nobis excepturi corporis incidunt? Sed repellat consequuntur eius fugit tenetur! Perspiciatis consequatur est in a aut.</p>
+            <a style={{backgroundColor: '#0c0c1d'}} class="text-white mt-4 py-4 px-8 rounded-xl inline-block duration-500 px-8 mt-5 py-4 font-bold hover:-translate-y-[4px]" href=``>MÁS INFORMACIÓN</a>
         </div>
-        <div class="rounded-2xl flex gap-12 mt-12">
-            <img class="rounded-2xl h-[300px] w-full object-cover" src="/david.jpg" alt="">
-            <div>
-                <h4 class="text-2xl mt-6 mb-4 text-slate-900">ASESORAMIENTO NUTRICIONAL</h4>
-                <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis harum id facilis aliquam, repudiandae blanditiis facere omnis voluptas nostrum numquam minus eos temporibus distinctio culpa? Sint, non ratione. Ipsa, blanditiis.</p>
-                <a class="bg-slate-900 text-white mt-4 py-4 px-8 rounded-xl inline-block duration-500 px-8 mt-5 py-4 font-bold hover:-translate-y-[4px]" href=``>MÁS INFORMACIÓN</a>
-            </div>
+        <div id="nutricion" class="opacity-0">
+            <h3 class="text-2xl mb-6">ASESORAMIENTO NUTRICIONAL</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis asperiores eveniet qui eaque eos nobis excepturi corporis incidunt? Sed repellat consequuntur eius fugit tenetur! Perspiciatis consequatur est in a aut.</p>
+            <a style={{backgroundColor: '#0c0c1d'}} class="text-white mt-4 py-4 px-8 rounded-xl inline-block duration-500 px-8 mt-5 py-4 font-bold hover:-translate-y-[4px]" href=``>MÁS INFORMACIÓN</a>
         </div>
     </div>
-</div>
+
+
+
+
+
+
+
+
+
+    <script>
+        const observableElement = document.getElementById('otros-servicios')
+        const first = document.getElementById('img-logo')
+        const second = document.getElementById('entrenamiento')
+        const third = document.getElementById('nutricion')
+        let options = {
+        root: document.querySelector("#scrollArea"),
+        rootMargin: "0px",
+        threshold: 0.4,
+    };
+    
+    let observer = new IntersectionObserver((entries)=>{
+        const entry =  entries[0]
+        if (entry.isIntersecting){
+            first.classList.add('animationVisible')
+            second.classList.add('animationVisible', 'animationVisible2')
+            third.classList.add('animationVisible', 'animationVisible3')
+        }
+    }, options);
+    
+    observer.observe(observableElement)
+    
+    </script>
 </section>

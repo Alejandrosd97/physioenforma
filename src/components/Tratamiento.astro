@@ -16,13 +16,18 @@ const { servicio : {id, titulo, descripcionCorta, img} } = Astro.props;
             animation : 1s linear fadeIn;
             animation-fill-mode: forwards;
         }
+
+        .elementoServicio{
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
     
     </style>
 
 <article class="elementoServicio opacity-0 col-span-12 sm:col-span-6 md:col-span-4">
-    <div>
         <img class="rounded-2xl h-[240px] w-full object-cover" src={img} alt="">
-        <h4 class="text-blue-400 text-2xl mt-6 mb-4">{titulo}</h4>
-        <p class="mb-4">{descripcionCorta}</p>
-    <a class="bg-slate-900 text-white py-4 px-8 rounded-xl inline-block duration-500 px-8 mt-5 py-4 font-bold hover:-translate-y-[4px]" href=`/tratamiento/${id}`>MÁS INFORMACIÓN</a>
-</article>
+        <div class="p-4 mt-2">
+            <h4 style="color: #a5c4df" class="text-2xl mb-4">{titulo}</h4>
+            <p class="mb-4">{descripcionCorta}</p>
+            <a class="bg-slate-900 text-white py-4 px-8 rounded-full inline-block duration-500 px-8 mt-5 py-4 font-bold hover:-translate-y-[4px]" href=`/tratamiento/${id}`>MÁS INFORMACIÓN</a>
+        </div>
+    </article>

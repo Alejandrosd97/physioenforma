@@ -1,0 +1,82 @@
+<style>
+
+    /* .azul-claro {
+        background-color: rgba(165,196,223, 0.3)
+    } */
+
+    @keyframes fadeIn {
+        to {
+            opacity : 1;
+        }
+    }
+
+    .animationVisible {
+        animation : 1s linear fadeIn;
+        animation-fill-mode: forwards;
+    }
+    .animationVisible2 {
+        animation-delay: 0.2s;
+    }
+    .animationVisible3 {
+        animation-delay: 0.4s;
+    }
+
+</style>
+
+
+<section id="otros-servicios" class="mt-32 px-4 rounded-2xl">
+    <div class="mb-20 text-center w-1/2 m-auto">
+        <h2 class="text-5xl text-slate-900 mb-4">Un enfoque completo para tu bienestar</h2>
+        <p class="text-slate-700">Creemos en un enfoque global para el bienestar y el rendimiento. Combinamos movimiento, terapia y hábitos saludables para ayudarte a recuperarte, fortalecer tu cuerpo y alcanzar tu mejor versión</p>
+    </div>
+    <div class="grid grid-cols-12 gap-4 rounded-2xl">
+        <div class="col-span-0 md:col-span-5 h-full rounded-2xl shadow-lg">
+            <img id="img-logo" class="hidden md:block opacity-0 text-white h-full w-full rounded-2xl" src="../logo-oscuro.jpg" alt="">
+        </div>
+        <div class="col-span-12 md:col-span-7 flex flex-col gap-4 justify-between">
+            <div id="entrenamiento" class="opacity-0 relative bg-slate-200 rounded-2xl p-8 h-1/2 shadow-lg">
+                <h3 class="text-3xl text-slate-900 mb-6">Ejercicio terapéutico en grupos reducidos</h3>
+                <p class="text-slate-700">Recupera tu salud y bienestar con nuestro servicio de ejercicio terapéutico en grupos reducidos. Disfruta de una experiencia personalizada, diseñada para adaptarse a tus necesidades específicas, en un ambiente seguro y motivador. Con el apoyo de profesionales especializados, podrás alcanzar tus objetivos de manera eficaz mientras mejoras tu calidad de vida y te mantienes activo.</p>
+                <a style={{backgroundColor: '#0c0c1d'}} class="text-white mt-4 py-4 px-8 rounded-full inline-block duration-500 px-8 mt-5 py-4 hover:" href=`/tratamiento/7`>Mas información</a>
+            </div>
+            <div id="nutricion" class="opacity-0 azul-claro bg-slate-200 relative rounded-2xl p-8 h-1/2 overflow-hidden shadow-lg">
+                <h3 class="text-3xl text-slate-900 mb-6">Asesoramiento nutricional</h3>
+                <p class="text-slate-700">Mejora tu salud y calidad de vida con nuestro servicio de asesoramiento nutricional personalizado. Trabajamos contigo para crear un plan adaptado a tus necesidades, objetivos y estilo de vida, guiándote en cada paso para lograr hábitos alimenticios sostenibles. En un entorno de apoyo y confianza, recibirás orientación profesional que te ayudará a alcanzar un equilibrio saludable, maximizando tu bienestar de forma segura y efectiva.</p>
+                <a style={{backgroundColor: '#0c0c1d'}} class="text-white mt-4 py-4 px-8 rounded-full inline-block duration-500 px-8 mt-5 py-4 hover:" href=`/tratamiento/8`>Mas información</a>
+                <img src="/apple.svg" class="text-blue-200 w-[350px] rotate-[30deg] z-10 absolute right-[50px] bottom-[-100px] opacity-5" alt="">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+        const observableElement = document.getElementById('otros-servicios')
+        const first = document.getElementById('img-logo')
+        const second = document.getElementById('entrenamiento')
+        const third = document.getElementById('nutricion')
+        let options = {
+        root: document.querySelector("#scrollArea"),
+        rootMargin: "0px",
+        threshold: 0.4,
+    };
+    
+    let observer = new IntersectionObserver((entries)=>{
+        const entry =  entries[0]
+        if (entry.isIntersecting){
+            first.classList.add('animationVisible')
+            second.classList.add('animationVisible', 'animationVisible2')
+            third.classList.add('animationVisible', 'animationVisible3')
+        }
+    }, options);
+    
+    observer.observe(observableElement)
+    
+    </script>
+</section>

@@ -2,6 +2,9 @@
 import Navbar from '../components/Navbar.jsx';
 import Footer from '../components/Footer.astro';
 import Whatsapp from '../components/Whatsapp.astro';
+import '@fontsource-variable/plus-jakarta-sans';
+import NavbarNueva from '../components/NavbarNueva.astro';
+import NavbarFull from '../components/NavbarFull.astro';
 
 interface Props {
 	title: string;
@@ -21,17 +24,14 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class="bg-white flex px-2 sm:px-10 py-2 justify-between">
-			<span style="color: #a5c4df" class="text-sm sm:text-lg">C/ Rei en Jaume I 8, Bellreguard</span>
-			<span style="color: #a5c4df" class="text-sm sm:text-lg">Tlf: 644 51 41 10</span>
-		</div>
-		<Navbar client:load/>
+		<NavbarFull/>
 		<slot />
 		<Footer/>
 		<Whatsapp/>
 	</body>
 </html>
-<!-- <style is:global>
-
-
-</style>  -->
+<style>
+	body {
+  		font-family: 'Plus Jakarta Sans Variable', sans-serif;
+	}
+</style>  

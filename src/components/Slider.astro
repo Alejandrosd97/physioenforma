@@ -2,7 +2,7 @@
     .contenedor{
         width: 100%;
         margin:auto;
-        height: 600px;
+        height: 560px;
         overflow:hidden;
         display:flex;
         justify-content: center;
@@ -19,18 +19,16 @@
         position:absolute;
         left:50%;
         transform:translateX(-50%);
-        bottom:220px;
+        bottom:180px;
         display: flex;
         gap:20px;
         z-index:20
     }
 
     .btn{
-        color:black;
         font-size:40px;
         height: 40px;
         width:40px;
-        border-radius:2px;
         background-color:rgba(0, 0, 0, 0.2);
         display: flex;
         align-items: center;
@@ -46,7 +44,6 @@
     .slides{
         position:absolute;
         border-radius:16px;
-        /* background:linear-gradient(to bottom, transparent 0%, black 100%), var(--img) ; */
         background:var(--img) ;
         background-size:cover;
         background-position:center;
@@ -69,6 +66,10 @@
         .buttons{
             bottom : 310px;
         }   
+
+        .contenedor{
+            height: 460px
+        }
     }
 
     @media screen and (max-width:480px){
@@ -107,40 +108,37 @@
 
 </style>
 
-<section class="bg-white">
-    <h4 class="w-5/6 m-auto text-4xl text-slate-900">DESCUBRE NUESTRA CLÍNICA</h4>
-    <div class="grid grid-cols-10 gap-x-8 w-5/6 m-auto pt-[50px]">
+<section class="mt-32">
+    <h2 class="w-5/6 m-auto text-5xl text-center mb-20 text-slate-900">Descubre nuestra clínica</h2>
+    <div class="grid grid-cols-10 gap-x-8 w-5/6 m-auto">
     <div class="contenedor col-span-10 md:col-span-6">
         <div id="slider" class="slider">
-            <div class="slides" style="--img : url(../../clinica-david-1.jpg)">
+            <div class="slides shadow-lg" style="--img : url(../../clinica-1.jpg)">
             </div>
-            <div class="slides" style="--img : url(../../clinica-david-2.jpg)">
+            <div class="slides shadow-lg" style="--img : url(../../clinica-david-3.jpg)">
             </div>
-            <div class="slides" style="--img : url(../../clinica-david-3.jpg)">
+            <div class="slides shadow-lg" style="--img : url(../../clinica-david-4.jpg)">
             </div>
-            <div class="slides" style="--img : url(../../clinica-david-4.jpg)">
-            </div>
-            <div class="slides" style="--img : url(../../clinica-david-5.jpg)">
-            </div>
-            <div class="slides" style="--img : url(../../clinica-david-6.jpg)">
+            <div class="slides shadow-lg" style="--img : url(../../clinica-david-6.jpg)">
             </div>
         </div>
         <div class="buttons">
-            <button id="before-btn" class="btn"><img src="../left.svg" alt=""></button>
-            <button id="after-btn" class="btn"><img src="../right.svg" alt=""></button>
+            <button id="before-btn" class="btn rounded-full"><img class="text-red-700" src="../left.svg" alt=""></button>
+            <button id="after-btn" class="btn text-slate-900 rounded-full"><img src="../right.svg" alt=""></button>
         </div>
     </div>
     <div class="col-span-10 md:col-span-4">
-        <p class="text-slate-900">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nulla quod veritatis beatae cupiditate a quia ut, magnam, quae cum laboriosam placeat. Fugiat voluptatibus officiis obcaecati repellat natus facere ut?</p>
-        <p class="text-slate-900">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis recusandae, cupiditate ratione sit deserunt totam quis aperiam assumenda rem vero cum ad consequuntur praesentium at! Eaque inventore error earum omnis.</p>
-        <h3 style="color: #a5c4df" class="mt-6 font-bold">HORARIO:</h3>
-        <span class="mt-1 inline-block text-slate-900">Lunes a Viernes: 10:00h a 14:00h y 16:00h a 20:00h</span>
-        <h3 style="color: #a5c4df" class="mt-6 font-bold">TELÉFONO:</h3>
-        <span class="mt-1 inline-block text-slate-900">
+        <p class="text-slate-700">Al llegar a nuestra clínica en Bellreguard, te recibirá nuestra acogedora recepción, diseñada para que te sientas cómodo desde el primer momento.</p>
+        <p class="text-slate-700 mt-3">Disponemos de una sala de fisioterapia, equipada con una camilla moderna, herramientas especializadas y tecnología avanzada para realizar evaluaciones y tratamientos personalizados.</p>
+        <p class="text-slate-700 mt-3">También contamos con área dedicada exclusivamente a ejercicios terapéuticos, con todo el equipamiento necesario para apoyar tu proceso de recuperación. Aquí, trabajamos en mejorar tu rendimiento físico, ayudándote a prevenir lesiones y alcanzar tus metas deportivas</p>
+        <h3 class="mt-6">HORARIO:</h3>
+        <span class="mt-1 inline-block text-slate-700">Lunes a Viernes: 10:00h a 14:00h y 16:00h a 20:00h</span>
+        <h3 class="mt-6">TELÉFONO:</h3>
+        <span class="mt-1 inline-block text-slate-700">
             644 51 41 10
         </span>
-        <h3 style="color: #a5c4df" class="mt-6 font-bold">DIRECCIÓN:</h3>
-        <span class="mt-1 inline-block text-slate-900">
+        <h3 class="mt-6">DIRECCIÓN:</h3>
+        <span class="mt-1 inline-block text-slate-700">
             Carrer Rei en Jaume 8, Bellreguard
         </span>
     </div>

@@ -1,0 +1,97 @@
+---
+import {tratamientosInfo} from'../../public/tratamientos.js'
+import Tratamiento from "./Tratamiento.astro"
+---
+
+
+<section id="servicios" class="mt-20">
+    <div class="w-5/6 mx-auto text-center">
+        <div class="mb-16">
+            <h2 class="text-5xl text-slate-900">Descubre que como podemos ayudarte</h2>
+            <p class="text-slate-700 text-lg mt-4 md:w-4/6 m-auto w-5/6">En Physioenforma, nos dedicamos a brindarte una atención integral para recuperar y mejorar tu bienestar físico. Descubre cómo podemos ayudarte a sentirte en tu mejor forma física</p>
+        </div>
+        <div class="img-container grid grid-cols-12 w-full mx-auto gap-x-5 gap-y-12">
+           
+            <article class="primera-fila rounded-2xl border border-slate-100 shadow-lg col-span-12 sm:col-span-6 md:col-span-4">
+                <img class=" h-[240px] w-full rounded-2xl object-cover" src='/terapia-manual.jpeg' alt="">
+                <div class="px-4 py-6 mt-2">
+                    <h4 class="text-2xl mb-2 text-slate-900">Terapia manual</h4>
+                    <p class="mb-8 text-slate-700">Usamos técnicas manuales aplicadas para mejorar la movilidad, aliviar el dolor y restaurar el equilibrio corporal</p>
+                    <a class="bg-slate-800 text-white py-4 px-8 rounded-full inline-block hover:bg-slate-700 duration-500"  href=`/terapia-manual`>Mas información</a>
+                </div>
+            </article>
+
+            <article class="primera-fila rounded-2xl border border-slate-100 shadow-lg col-span-12 sm:col-span-6 md:col-span-4">
+                <img class="rounded-2xl h-[240px] w-full object-cover" src='/epi.jpeg' alt="">
+                <div class="px-4 py-6 mt-2">
+                    <h4 class="text-2xl mb-2 text-slate-900">EPI</h4>
+                    <p class="mb-8 text-slate-700">Se trata de una técnica avanzada que utiliza corriente galvánica para reparar tejidos dañados y acelerar la recuperación</p>
+                    <a class="bg-slate-800 text-white py-4 px-8 rounded-full inline-block hover:bg-slate-700 duration-500"  href="/EPI">Mas información</a>
+                </div>
+            </article>
+
+            <article class="primera-fila rounded-2xl border border-slate-100 shadow-lg col-span-12 sm:col-span-6 md:col-span-4">
+                <img class="rounded-2xl h-[240px] w-full object-cover" src='/eco.jpeg' alt="">
+                <div class="px-4 py-6 mt-2">
+                    <h4 class="text-2xl mb-2 text-slate-900">Ecografía</h4>
+                    <p class="mb-8 text-slate-700">Diagnóstico por imagen en tiempo real para evaluar lesiones y guiar tratamientos con precisión</p>
+                    <a class="bg-slate-800 text-white py-4 px-8 rounded-full inline-block hover:bg-slate-700 duration-500"  href=`/ecografia`>Mas información</a>
+                </div>
+            </article>
+
+            <article class="segunda-fila rounded-2xl border border-slate-100 shadow-lg col-span-12 sm:col-span-6 md:col-span-4">
+                <img class="rounded-2xl h-[240px] w-full object-cover" src='/puncion.jpeg' alt="">
+                <div class="px-4 py-6 mt-2">
+                    <h4 class="text-2xl mb-2 text-slate-900">Punción seca</h4>
+                    <p class="mb-8 text-slate-700">Introducción de agujas finas para desactivar puntos gatillo y aliviar contracturas musculares de manera efectiva</p>
+                    <a class="bg-slate-800 text-white py-4 px-8 rounded-full inline-block hover:bg-slate-700 duration-500"  href=`/tratamiento/1`>Mas información</a>
+                </div>
+            </article>
+
+            <article class="segunda-fila rounded-2xl border border-slate-100 shadow-lg col-span-12 sm:col-span-6 md:col-span-4">
+                <img class="rounded-2xl h-[240px] w-full object-cover" src='/radiofrecuencia.jpg' alt="">
+                <div class="px-4 py-6 mt-2">
+                    <h4 class="text-2xl mb-2 text-slate-900">Radiofrecuencia</h4>
+                    <p class="mb-8 text-slate-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur veniam atque qui dignissimos ratione deserunt delen</p>
+                    <a class="bg-slate-800 text-white py-4 px-8 rounded-full inline-block hover:bg-slate-700 duration-500"  href=`/tratamiento/1`>Mas información</a>
+                </div>
+            </article>
+
+            <article class="segunda-fila rounded-2xl border border-slate-100 shadow-lg col-span-12 sm:col-span-6 md:col-span-4">
+                <img class="rounded-2xl h-[240px] w-full object-cover" src='/ejercicio.jpeg' alt="">
+                <div class="px-4 py-6 mt-2">
+                    <h4 class="text-2xl mb-2 text-slate-900">Rehabilitación</h4>
+                    <p class="mb-8 text-slate-700">Proceso terapéutico personalizado para recuperar la funcionalidad tras lesiones deportivas, quirúrgicas o musculoesqueléticas</p>
+                    <a class="bg-slate-800 text-white py-4 px-8 rounded-full inline-block hover:bg-slate-700 duration-500"  href=`/tratamiento/1`>Mas información</a>
+                </div>
+            </article>
+        </div>
+    </div>
+    
+<script>
+    import { gsap } from "gsap";
+        import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const primeraFila = gsap.utils.toArray('.primera-fila')
+        const segundaFila = gsap.utils.toArray('.segunda-fila')
+        gsap.from(primeraFila, {
+            y : 80,
+            opacity : 0, 
+            scrollTrigger : {
+                trigger : '.img-container',
+                start : '-200px top',            }
+        })
+
+        gsap.from(segundaFila, {
+            y : 80,
+            opacity : 0, 
+            scrollTrigger : {
+                trigger : '.img-container',
+                start : '160px top',
+            }
+        })
+
+</script>
+</section>

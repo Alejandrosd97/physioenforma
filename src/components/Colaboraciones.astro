@@ -1,0 +1,49 @@
+<style>
+    .box{
+        background-color: rgba(165,196,223, 0.3);
+        /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+    }
+
+    .gandia {
+        background-image: url('../../public/david-basket.jpg');
+        background-size: cover;
+        background-position: 50%;
+        background: linear-gradient(transparent 47%, rgba(0,0,0,0.3) 100%); 
+    }
+</style>
+
+<section class="mt-32 w-5/6 m-auto rounded-2xl">
+    <div class="text-center mb-20 md:w-3/5 mx-auto">
+        <h2 class="text-5xl mb-4 text-slate-900">Aliados en el rendimiento deportivo</h2>
+        <p class="text-slate-700">En Physioenforma, nos enorgullece ser los fisioterapeutas oficiales del CD Jávea y del Units pel Basket Gandía. Ofrecemos atención especializada a los jugadores, ayudándoles a prevenir lesiones, optimizar su rendimiento y garantizar una recuperación rápida y segura. Gracias a nuestra experiencia trabajando con deportistas, aplicamos técnicas avanzadas y un enfoque integral que también está disponible para todos nuestros pacientes, combinando profesionalismo y pasión por la salud y el bienestar.</p>
+    </div>
+    <div class="grid grid-cols-4 gap-4">
+        <div class="colaboracion bg-slate-50 p-6 rounded-2xl shadow-lg col-span-2 border border-slate-200 flex flex-col items-center gap-6">
+            <img class="h-[200px] opacity-30 " src="/javea-blanco.png" alt="">
+            <h4 class="text-3xl text-slate-900">Club Deportivo Jávea</h4>
+            <p class="text-center text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum doloremque consequatur a molestias sint laudantium, architecto perferendis hic quia rerum consectetur, facilis necessitatibus commodi ex, error optio corporis sapiente officia?</p>
+        </div>
+        <div class="gandia flex flex-col justify-end colaboracion box p-6 rounded-2xl shadow-lg col-span-2 flex border border-slate-200 flex-col items-center gap-6">
+            <h4 class="text-3xl text-slate-900">Units pel Basket Gandía</h4>
+            <p class="text-center text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum doloremque consequatur a molestias sint laudantium, architecto perferendis hic quia rerum consectetur, facilis necessitatibus commodi ex, error optio corporis sapiente officia?</p>
+        </div>
+    </div>
+
+    <script>
+        import { gsap } from "gsap";
+        import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const colaboracion = gsap.utils.toArray('.colaboracion')
+        
+        gsap.from(colaboracion, {
+            y : 50,
+            opacity :0, 
+            scrollTrigger : {
+                trigger : '.colaboracion',
+                start : '-350px top',
+            }
+        })
+    </script>
+</section>

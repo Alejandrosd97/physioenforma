@@ -1,0 +1,68 @@
+
+
+
+
+<style>
+    
+    .titulo, .subtitulo, .botones{
+        transform : translateY(50px);
+        opacity : 0
+    }
+
+    .titulo {
+        font-size:92px
+    }
+
+</style>
+
+
+<section class="w-screen h-screen">
+    <div style={{backgroundColor: '#0c0c1d'}} class="relative mx-4 rounded-2xl flex items-center justify-between flex-row pl-12">
+        <div class="hero-info z-10 md:top-0 md:left-0 md:relative md:p-0 w-3/5 text-left">
+            <h1 class="titulo text-slate-100 tracking-tighter font-bold md:text-7xl mb-2">Porque el movimiento es vida, recupéralo con nosotros</h1>
+            <h2 class="subtitulo md:text-xl text-slate-300 text-md mb-8">Si el dolor te frena, nosotros te impulsamos: tratamientos especializados que combinan experiencia y dedicación, pensados para deportistas como tú</h2>
+            <!-- Tu recuperaicón comienza aquí: fisioterapia deportiva diseñada para ayudarte a moverte mejor, rendir más y vivir sin dolor -->
+            <div class="botones flex justify-start gap-2">
+                <a class="main-btn bg-blue-200 text-slate-900 rounded-full inline-block md:inline py-4 px-8 duration-500 hover:bg-blue-100" target='_blank' href="https://wa.me/34644514110">
+                    Pide cita
+                </a>
+                <a class="main-btn bg-slate-800 rounded-full inline-block md:inline text-white py-4 px-8 duration-500 hover:bg-slate-700" href="/nosotros">
+                    Conócenos
+                </a>
+            </div>
+        </div>
+        <div class="img-animation h-full w-2/5  pb-4">
+            <img style={{transform: "scaleX(-1)"}} class="hidden md:block text-white h-full w-full h-screen object-cover rounded-3xl" src="../logo-invertido.jpg" alt="">
+        </div>
+        <div class="absolute left-12 bottom-6 text-slate-700">
+            <p>C/ Rei en Jaume 8, Bellreguard</p>
+            <p>Teléfono : 644 51 41 10</p>
+        </div>
+    </div>
+
+    <script>
+        import { gsap } from "gsap";   
+
+        const t1 = gsap.timeline()
+
+
+        t1.to('.titulo', {
+            y : 0,
+            opacity : 1, 
+            duration : 0.5
+        })
+        .to('.subtitulo', {
+            y: 0,
+            opacity : 1, 
+            duration : 0.5
+        })
+        .to('.botones', {
+            y : 0,
+            opacity : 1, 
+            duration : 0.5
+        })
+
+
+    </script>
+    
+</section>

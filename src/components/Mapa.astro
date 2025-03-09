@@ -1,6 +1,23 @@
-<section class="bg-white py-16">
-    <div class="w-5/6 m-auto rounded-2xl">
-        <h3 class="mb-12 text-4xl text-slate-900">LOCALIZACIÓN</h3>
-        <iframe style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;" title="localización" class="w-full h-[300px] sm:h-[450px]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3103.035884960369!2d-0.1639708249301764!3d38.9460085717137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61e9086230cb7b%3A0xd0677129c38172a7!2sCl%C3%ADnica%20de%20fisioterapia%20y%20rehabilitaci%C3%B3n%20Physioenforma%20David%20Bosc%C3%A0!5e0!3m2!1ses!2ses!4v1705878225307!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<section class="mt-32">
+    <div class="md:w-5/6 m-auto rounded-2xl">
+        <h2 class="mb-20 text-5xl text-slate-800 text-center">Dónde encontrarnos para empezar tu tratamiento</h2>
+        <iframe style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;" title="localización" class="mapa w-full h-[300px] sm:h-[450px]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3103.035884960369!2d-0.1639708249301764!3d38.9460085717137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd61e9086230cb7b%3A0xd0677129c38172a7!2sCl%C3%ADnica%20de%20fisioterapia%20y%20rehabilitaci%C3%B3n%20Physioenforma%20David%20Bosc%C3%A0!5e0!3m2!1ses!2ses!4v1705878225307!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
+    <script>
+         import { gsap } from "gsap";
+        import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const mapa = gsap.utils.toArray('.mapa')
+        
+        gsap.from(mapa, {
+            y : 50,
+            opacity :0, 
+            scrollTrigger : {
+                trigger : '.mapa',
+                start : '-200px top',
+            }
+        })
+    </script>
 </section>

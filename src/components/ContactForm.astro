@@ -22,36 +22,39 @@
 
 </style>
 
-<section style={{backgroundColor: '#0c0c1d', borderTopLeftRadius : '16px', borderTopRightRadius : '16px'}} class="py-20 border-b-2 border-white" id="contacto">
+<section style={{backgroundColor: '#0c0c1d'}} class="py-12 border-b mt-20 rounded-2xl mx-4 border-white relative overflow-hidden" id="contacto">
     <div id="observableElementForm" class="w-5/6 mx-auto">
-    <h2 class=" text-white text-4xl mb-12 ">CONTACTO</h2>
-    <p class="text-white mb-10">Déjanos tu mensaje y nos pondremos en contacto contigo lo antes posible</p>
+        <div class="mb-16">
+            <h2 class="text-5xl mb-4 text-slate-200">¡Contáctanos!</h2>
+            <p class="text-slate-400">Déjanos tu mensaje y nos pondremos en contacto contigo lo antes posible</p>
+        </div>
     <div>
     <form action="">
         <div class="grid grid-cols-4 sm:gap-12">
         <div class="col-span-4 sm:col-span-2">
         <div id="primerElementoForm" class="flex flex-col mb-5 gap-1 opacity-0">
-            <label style="color: #a5c4df" for="nombre">Nombre</label>
-            <input name="name" class="outline-none border-solid border-2 text-white border-white bg-transparent px-1 py-1.5 rounded-md" name="nombre" type="text">
+            <label class="text-slate-400" for="nombre">Nombre</label>
+            <input name="name" class="outline-none border-solid border px-3 text-white focus:border-gray-400 border-gray-700 bg-transparent px-1 py-1.5 rounded-md" name="nombre" type="text">
         </div>
 
         <div id="segundoElementoForm" class="flex flex-col gap-1 opacity-0">
-            <label style="color: #a5c4df" for="email">Email</label>
-            <input name="email" class="outline-none border-solid border-2 text-white border-white bg-transparent px-1 py-1.5 rounded-md" name="email" type="text">
+            <label class="text-slate-400" for="email">Email</label>
+            <input name="email" class="outline-none border-solid px-3 border text-white focus:border-gray-400 border-gray-700 bg-transparent px-1 py-1.5 rounded-md" name="email" type="text">
         </div>
     </div>
 
         <div id="tercerElementoForm" class="col-span-4 sm:col-span-2 flex h-[200px] sm:h-full flex-col my-5 sm:mt-0 gap-1 opacity-0">
-            <label style="color: #a5c4df" for="mensaje">Mensaje</label>
-            <textarea name="mensaje" class="outline-none resize-none h-full text-white border-solid border-2 border-white bg-transparent px-1 py-1.5 rounded-md" name="mensaje"></textarea>
+            <label class="text-slate-400" for="mensaje">Mensaje</label>
+            <textarea name="mensaje" class="outline-none px-3 resize-none h-full text-white border-solid border focus:border-gray-400 border-gray-700 bg-transparent px-1 py-1.5 rounded-md" name="mensaje"></textarea>
         </div>
     </div>
     <div id="cuartoElementoForm" class="opacity-0">
         <input class="mt-5" type="checkbox" required id="privacidad">
         <label class="mt-5 text-white" for="privacidad">He leido y acepto la <a class="text-white" href="/privacidad">política de privacidad</a></label>
-        <button style="background-color: #a5c4df" class="rounded-full block duration-500 px-8 mt-5 py-4 text-slate-900 font-bold hover:-translate-y-[4px]">ENVIAR</button>
+        <button style="background-color: #a5c4df" class="rounded-full hover:bg-blue-100 block duration-500 px-8 mt-5 py-4 text-slate-900 hover:">Enviar</button>
     </div>
     </form>
+    <img class="w-[500px] opacity-5 rotate-45 absolute top-[-30px] right-[-20px]" src="/message.svg" alt="">
 </div>
 </div>
 

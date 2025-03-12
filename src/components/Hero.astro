@@ -3,23 +3,22 @@
 
 
 <style>
-    
     .titulo, .subtitulo, .botones{
         transform : translateY(50px);
         opacity : 0
     }
 
-    .titulo{
+    /* .titulo{
         font-size: 86px;
-    }
+    } */
 </style>
 
 
 <section class="w-screen relative">
     <div class="flex h-full items-center justify-between w-full flex-row pl-12">
         <div class="hero-info z-10 md:top-0 md:left-0 md:relative md:p-0 w-3/5 text-left">
-            <h1 class="titulo text-slate-900 tracking-tighter text-6xl font-bold md:text-7xl mb-2">Porque el movimiento es vida, recupéralo con nosotros</h1>
-            <h2 class="subtitulo md:text-xl text-slate-700 text-md mb-8">Si el dolor te frena, nosotros te impulsamos: tratamientos especializados que combinan experiencia y dedicación, pensados para deportistas como tú</h2>
+            <h1 class="titulo text-slate-900 tracking-tighter font-bold text-7xl mb-2">Porque el movimiento es vida, recupéralo con nosotros</h1>
+            <h2 class="subtitulo text-slate-700 text-md mb-8">Si el dolor te frena, nosotros te impulsamos: tratamientos especializados que combinan experiencia y dedicación, pensados para deportistas como tú</h2>
             <!-- Tu recuperaicón comienza aquí: fisioterapia deportiva diseñada para ayudarte a moverte mejor, rendir más y vivir sin dolor -->
             <div class="botones flex justify-start gap-2">
                 <a class="main-btn bg-slate-300 text-slate-900 rounded-full inline-block md:inline py-4 px-8 duration-500 hover:bg-blue-100" target='_blank' href="https://wa.me/34644514110">
@@ -30,8 +29,8 @@
                 </a>
             </div>
         </div>
-        <div class="img-animation h-full w-2/5  pb-4">
-            <img style={{transform: "scaleX(-1)"}} class="hidden md:block text-white h-full w-full rounded-3xl" src="../logo-oscuro.jpg" alt="">
+        <div class="img-animation h-screen">
+            <img style={{transform: "scaleX(-1)"}} class="hidden md:block h-full w-full object-cover rounded-3xl" src="../logo-oscuro.jpg" alt="">
         </div>
         <!-- <div class="absolute left-12 bottom-6 text-slate-700">
             <p>C/ Rei en Jaume 8, Bellreguard</p>
